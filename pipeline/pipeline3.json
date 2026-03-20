@@ -1,0 +1,45 @@
+{
+	"name": "pipeline3",
+	"properties": {
+		"activities": [
+			{
+				"name": "Script1",
+				"type": "Script",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "Snowflake2",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": "abcd"
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00",
+					"returnMultistatementResult": {
+						"value": "@pipeline().parameters.bool",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"bool": {
+				"type": "Bool"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-01-08T12:23:21Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

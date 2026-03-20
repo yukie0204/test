@@ -1,0 +1,14 @@
+{
+	"name": "AzureTrino6",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureTrino",
+		"typeProperties": {
+			"host": "georgedev.6762a0931d00459f8ee9094c468fe3d5.westus2.tip.hdinsightaks.net",
+			"catalog": "system",
+			"schema": "information_schema",
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}

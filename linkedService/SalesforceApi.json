@@ -1,0 +1,57 @@
+{
+	"name": "SalesforceApi",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "SalesforceV2",
+		"parameters": {
+			"env": {
+				"type": "String"
+			},
+			"id": {
+				"type": "String"
+			},
+			"name": {
+				"type": "String"
+			},
+			"version": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"typeProperties": {
+			"environmentUrl": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SalesforceAkv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADMS-SALESFORCE-ENVURL"
+			},
+			"clientId": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SalesforceAkv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADMS-SALESFORCE-CLIENTID"
+			},
+			"clientSecret": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SalesforceAkv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADMS-SALESFORCE-SECRET"
+			},
+			"apiVersion": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SalesforceAkv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADMS-SALESFORCE-VERSION"
+			},
+			"authenticationType": "OAuth2ClientCredential"
+		}
+	}
+}

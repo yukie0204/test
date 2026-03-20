@@ -1,0 +1,21 @@
+{
+	"name": "Greenplum1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Greenplum",
+		"version": "2.0",
+		"typeProperties": {
+			"authenticationType": "Basic",
+			"host": "a",
+			"port": 5432,
+			"database": "a",
+			"username": "a",
+			"sslMode": 3,
+			"password": {
+				"type": "SecureString",
+				"value": "**********"
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+{
+	"name": "SalesforceObject2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SalesforceApi",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"env": {
+					"value": "@dataset().env",
+					"type": "Expression"
+				},
+				"id": {
+					"value": "@dataset().clientid",
+					"type": "Expression"
+				},
+				"name": {
+					"value": "@dataset().secret",
+					"type": "Expression"
+				},
+				"version": {
+					"value": "@dataset().version",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"env": {
+				"type": "String"
+			},
+			"clientid": {
+				"type": "String"
+			},
+			"secret": {
+				"type": "String"
+			},
+			"version": {
+				"type": "String"
+			},
+			"apiName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "SalesforceV2Object",
+		"schema": [],
+		"typeProperties": {
+			"objectApiName": {
+				"value": "@dataset().apiName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

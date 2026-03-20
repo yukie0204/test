@@ -1,0 +1,20 @@
+{
+	"name": "Vertica1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Vertica",
+		"version": "2.0",
+		"typeProperties": {
+			"1": "2",
+			"server": "abc",
+			"port": "123",
+			"pwd": {
+				"type": "SecureString",
+				"value": "**********"
+			},
+			"uid": "abc",
+			"database": "abc"
+		}
+	}
+}

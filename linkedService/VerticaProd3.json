@@ -1,0 +1,20 @@
+{
+	"name": "VerticaProd3",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [
+			"abcasd"
+		],
+		"type": "Vertica",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "secret1"
+			}
+		}
+	}
+}

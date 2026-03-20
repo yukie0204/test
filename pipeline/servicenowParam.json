@@ -1,0 +1,124 @@
+{
+	"name": "servicenowParam",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ServiceNowV2Source",
+						"expression": {
+							"type": "Nary",
+							"operators": [
+								"NQ"
+							],
+							"operands": [
+								{
+									"type": "Nary",
+									"operators": [
+										"="
+									],
+									"operands": [
+										{
+											"type": "Field",
+											"value": "a"
+										},
+										{
+											"type": "Constant",
+											"value": {
+												"value": "@pipeline().parameters.a",
+												"type": "Expression"
+											}
+										}
+									]
+								},
+								{
+									"type": "Nary",
+									"operators": [
+										"BETWEEN",
+										"@"
+									],
+									"operands": [
+										{
+											"type": "Field",
+											"value": "b"
+										},
+										{
+											"type": "Constant",
+											"value": {
+												"value": "@pipeline().parameters.b",
+												"type": "Expression"
+											}
+										},
+										{
+											"type": "Constant",
+											"value": {
+												"value": "@pipeline().parameters.c",
+												"type": "Expression"
+											}
+										}
+									]
+								}
+							]
+						},
+						"pageSize": 300
+					},
+					"sink": {
+						"type": "AvroSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "AvroWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ServiceNowObject3",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Avro1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"a": {
+				"type": "String"
+			},
+			"b": {
+				"type": "String"
+			},
+			"c": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-12-04T06:59:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,17 @@
+{
+	"name": "Presto1Anon",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Presto",
+		"typeProperties": {
+			"host": "a",
+			"serverVersion": "a",
+			"catalog": "a",
+			"port": 443,
+			"authenticationType": "Anonymous",
+			"enableSsl": false,
+			"timeZoneID": ""
+		}
+	}
+}

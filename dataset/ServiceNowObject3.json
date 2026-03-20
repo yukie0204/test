@@ -1,0 +1,113 @@
+{
+	"name": "ServiceNowObject3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ServiceNow3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "ServiceNowV2Object",
+		"schema": [
+			{
+				"name": "session_properties",
+				"type": "string"
+			},
+			{
+				"name": "email_user_label",
+				"type": "string"
+			},
+			{
+				"name": "sys_created_on",
+				"type": "glide_date_time"
+			},
+			{
+				"name": "server",
+				"type": "string"
+			},
+			{
+				"name": "sys_id",
+				"type": "GUID"
+			},
+			{
+				"name": "keystore",
+				"type": "reference"
+			},
+			{
+				"name": "port",
+				"type": "string"
+			},
+			{
+				"name": "connection_security",
+				"type": "string"
+			},
+			{
+				"name": "sys_created_by",
+				"type": "string"
+			},
+			{
+				"name": "authentication",
+				"type": "string"
+			},
+			{
+				"name": "servicenow_configured",
+				"type": "boolean"
+			},
+			{
+				"name": "user_name",
+				"type": "string"
+			},
+			{
+				"name": "enable_ssl",
+				"type": "boolean"
+			},
+			{
+				"name": "sys_updated_on",
+				"type": "glide_date_time"
+			},
+			{
+				"name": "type",
+				"type": "string"
+			},
+			{
+				"name": "from",
+				"type": "string"
+			},
+			{
+				"name": "password",
+				"type": "password2"
+			},
+			{
+				"name": "sys_mod_count",
+				"type": "integer"
+			},
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "enable_tls",
+				"type": "boolean"
+			},
+			{
+				"name": "sys_updated_by",
+				"type": "string"
+			},
+			{
+				"name": "active",
+				"type": "boolean"
+			},
+			{
+				"name": "system_address_filter",
+				"type": "reference"
+			},
+			{
+				"name": "enable_debug_output",
+				"type": "boolean"
+			}
+		],
+		"typeProperties": {
+			"tableName": "adaptive_auth_event"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
