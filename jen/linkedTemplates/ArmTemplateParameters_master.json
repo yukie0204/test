@@ -1,0 +1,662 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "jen"
+		},
+		"AmazonRdsForOracle1_connectionString": {
+			"value": ""
+		},
+		"AmazonRdsForOracle2_connectionString": {
+			"value": ""
+		},
+		"AmazonRdsForSqlServer1_connectionString": {
+			"value": ""
+		},
+		"AmazonRedshift1_password": {
+			"value": ""
+		},
+		"AmazonS3Compatible1_secretAccessKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataExplorer1_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage3_servicePrincipalCredential": {
+			"value": ""
+		},
+		"AzureDataLakeStorage5_servicePrincipalCredential": {
+			"value": ""
+		},
+		"AzureFileStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureSearch1_key": {
+			"value": ""
+		},
+		"AzureTrino1_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureTrino1_clientSecret": {
+			"value": ""
+		},
+		"AzureTrino2_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureTrino2_clientSecret": {
+			"value": ""
+		},
+		"AzureTrino3_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureTrino4_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureTrino4_clientSecret": {
+			"value": ""
+		},
+		"Cassandra1_password": {
+			"value": ""
+		},
+		"CosmosDbNoSql1_connectionString": {
+			"value": ""
+		},
+		"CosmosDbNoSql2_connectionString": {
+			"value": ""
+		},
+		"Dataverse1_servicePrincipalCredential": {
+			"value": ""
+		},
+		"Dynamics1_password": {
+			"value": ""
+		},
+		"Dynamics2_password": {
+			"value": ""
+		},
+		"Dynamics3_password": {
+			"value": ""
+		},
+		"DynamicsCrm1_servicePrincipalCredential": {
+			"value": ""
+		},
+		"FileServer1_password": {
+			"value": ""
+		},
+		"GoogleAdWords1_developerToken": {
+			"value": ""
+		},
+		"GoogleAdWords1_clientSecret": {
+			"value": ""
+		},
+		"GoogleAdWords1_refreshToken": {
+			"value": ""
+		},
+		"GoogleAdWords2_connectionProperties_developerToken": {
+			"value": ""
+		},
+		"GoogleAdWords2_connectionProperties_clientSecret": {
+			"value": ""
+		},
+		"GoogleAdWords2_connectionProperties_refreshToken": {
+			"value": ""
+		},
+		"GoogleAdWords3_connectionProperties_developerToken": {
+			"value": ""
+		},
+		"GoogleAdWordsLocal_developerToken": {
+			"value": ""
+		},
+		"GoogleAdWordsLocal_privateKey": {
+			"value": ""
+		},
+		"GoogleAdWordsNewService_developerToken": {
+			"value": ""
+		},
+		"GoogleAdWordsNewService_privateKey": {
+			"value": ""
+		},
+		"GoogleAdWordsNewUser_developerToken": {
+			"value": ""
+		},
+		"GoogleAdWordsNewUser_clientSecret": {
+			"value": ""
+		},
+		"GoogleAdWordsNewUser_refreshToken": {
+			"value": ""
+		},
+		"GoogleAdWordsOldService_connectionProperties_developerToken": {
+			"value": ""
+		},
+		"GoogleAdWordsOldUser_connectionProperties_developerToken": {
+			"value": ""
+		},
+		"GoogleAdWordsOldUser_connectionProperties_clientSecret": {
+			"value": ""
+		},
+		"GoogleAdWordsOldUser_connectionProperties_refreshToken": {
+			"value": ""
+		},
+		"GoogleAdWordsProd_developerToken": {
+			"value": ""
+		},
+		"GoogleAdWordsProd_privateKey": {
+			"value": ""
+		},
+		"GoogleBigQuery1_clientSecret": {
+			"value": ""
+		},
+		"GoogleBigQuery1_refreshToken": {
+			"value": ""
+		},
+		"GoogleBigQuery2_clientSecret": {
+			"value": ""
+		},
+		"GoogleBigQuery2_refreshToken": {
+			"value": ""
+		},
+		"Greenplum1_pwd": {
+			"value": ""
+		},
+		"Greenplum2_connectionString": {
+			"value": ""
+		},
+		"MariaDB1_password": {
+			"value": ""
+		},
+		"Microsoft3651_servicePrincipalKey": {
+			"value": ""
+		},
+		"Microsoft3652_servicePrincipalKey": {
+			"value": ""
+		},
+		"Oracle2_password": {
+			"value": ""
+		},
+		"Oracle3_password": {
+			"value": ""
+		},
+		"PostgreSql1_connectionString": {
+			"value": ""
+		},
+		"Presto1_password": {
+			"value": ""
+		},
+		"Presto1Anon_password": {
+			"value": ""
+		},
+		"Presto2_password": {
+			"value": ""
+		},
+		"PrestoV2_password": {
+			"value": ""
+		},
+		"PrestoV2Anon_password": {
+			"value": ""
+		},
+		"RestService1_password": {
+			"value": ""
+		},
+		"Salesforce1_password": {
+			"value": ""
+		},
+		"Salesforce1_securityToken": {
+			"value": ""
+		},
+		"Salesforce2_clientSecret": {
+			"value": ""
+		},
+		"Salesforce3_clientSecret": {
+			"value": ""
+		},
+		"SalesforceMarketingCloud1_connectionProperties_clientSecret": {
+			"value": ""
+		},
+		"SalesforceServiceCloud1_clientSecret": {
+			"value": ""
+		},
+		"SalesforceServiceCloud2_password": {
+			"value": ""
+		},
+		"SalesforceServiceCloud2_securityToken": {
+			"value": ""
+		},
+		"SalesforceV21_clientSecret": {
+			"value": ""
+		},
+		"SapEcc1_password": {
+			"value": ""
+		},
+		"ServiceNow2_password": {
+			"value": ""
+		},
+		"ServiceNow3_password": {
+			"value": ""
+		},
+		"ServiceNow4_password": {
+			"value": ""
+		},
+		"ServiceNowGood_password": {
+			"value": ""
+		},
+		"SharePointOnlineFile1_servicePrincipalKey": {
+			"value": ""
+		},
+		"Snowflake1_connectionString": {
+			"value": ""
+		},
+		"Snowflake2_password": {
+			"value": ""
+		},
+		"Snowflake3_password": {
+			"value": ""
+		},
+		"Snowflake4_password": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServer2_password": {
+			"value": ""
+		},
+		"Vertica1_pwd": {
+			"value": ""
+		},
+		"VerticaProd1_connectionString": {
+			"value": ""
+		},
+		"adlsJenq_accountKey": {
+			"value": ""
+		},
+		"jenq_connectionString": {
+			"value": ""
+		},
+		"linkedService1_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=admsuxtest-sql.database.windows.net;Initial Catalog=admsuxtest"
+		},
+		"Oracle1_connectionString": {
+			"value": "host=admsoracle11.eastus.cloudapp.azure.com;port=1521;sid=XE;user id=BinaryTypes"
+		},
+		"VerticaProd2_connectionString": {
+			"value": "Server=server;Port=1234;Database=dbd;UID=user1;b=2;c=3"
+		},
+		"linkedService2_password": {
+			"value": ""
+		},
+		"linkedService3_password": {
+			"value": ""
+		},
+		"AmazonRedshift1_properties_typeProperties_server": {
+			"value": "ms-test.czkzkdm9fady.us-west-2.redshift.amazonaws.com"
+		},
+		"AmazonRedshift1_properties_typeProperties_database": {
+			"value": "dev"
+		},
+		"AmazonRedshift1_properties_typeProperties_username": {
+			"value": "rsadmin"
+		},
+		"AmazonRedshift2_properties_typeProperties_server": {
+			"value": "a"
+		},
+		"AmazonRedshift2_properties_typeProperties_database": {
+			"value": "a"
+		},
+		"AmazonRedshift2_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"AmazonS3Compatible1_properties_typeProperties_accessKeyId": {
+			"value": "a"
+		},
+		"AzureDataExplorer1_properties_typeProperties_endpoint": {
+			"value": "https://admsuxtest.eastus.kusto.windows.net"
+		},
+		"AzureDataExplorer1_properties_typeProperties_tenant": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureDataExplorer1_properties_typeProperties_servicePrincipalId": {
+			"value": "@linkedService().sp"
+		},
+		"AzureDataExplorer1_properties_typeProperties_database": {
+			"value": "asd"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://admsuxtest.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://adftest0224.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_tenant": {
+			"value": "82100b66-ace5-4bd1-a137-f11432b93451"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_servicePrincipalId": {
+			"value": "d454fd1a-203b-4efc-89c8-35df6595cde0"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"value": "https://adfmgdctestsstorage.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_tenant": {
+			"value": "8a1d6ba1-7966-4617-adb0-58c2c4bb816b"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_servicePrincipalId": {
+			"value": "38dfc0d9-fd8d-4f6d-8aad-f414dad88703"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://ADMS-UX-TEST.vault.azure.net/"
+		},
+		"AzureSearch1_properties_typeProperties_url": {
+			"value": "https://adfbot-asi3ad23cbz3m3g.search.windows.net"
+		},
+		"AzureTrino1_properties_typeProperties_host": {
+			"value": "@{linkedService().host}"
+		},
+		"AzureTrino1_properties_typeProperties_tenant": {
+			"value": "@{linkedService().ten}"
+		},
+		"AzureTrino1_properties_typeProperties_clientId": {
+			"value": "@{linkedService().id}"
+		},
+		"AzureTrino2_properties_typeProperties_host": {
+			"value": "cluster.pool.region.hdinsightaks.net"
+		},
+		"AzureTrino2_properties_typeProperties_tenant": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureTrino2_properties_typeProperties_clientId": {
+			"value": "asdf"
+		},
+		"AzureTrino3_properties_typeProperties_host": {
+			"value": "cluster.clusterpool.region.hdinsightaks.net"
+		},
+		"AzureTrino4_properties_typeProperties_host": {
+			"value": "cluster.pool.us.hdinsightaks.net"
+		},
+		"AzureTrino4_properties_typeProperties_tenant": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureTrino4_properties_typeProperties_clientId": {
+			"value": "asdf"
+		},
+		"AzureTrino6_properties_typeProperties_host": {
+			"value": "georgedev.6762a0931d00459f8ee9094c468fe3d5.westus2.tip.hdinsightaks.net"
+		},
+		"Cassandra1_properties_typeProperties_host": {
+			"value": "a"
+		},
+		"Cassandra1_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"Dataverse1_properties_typeProperties_servicePrincipalId": {
+			"value": "9bf5d9fd-5dcd-46a5-b99b-77d69adb2567"
+		},
+		"Dynamics1_properties_typeProperties_username": {
+			"value": "d"
+		},
+		"Dynamics2_properties_typeProperties_username": {
+			"value": "userName"
+		},
+		"Dynamics3_properties_typeProperties_username": {
+			"value": "user"
+		},
+		"DynamicsCrm1_properties_typeProperties_servicePrincipalId": {
+			"value": "a"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "\\\\jenq.file.core.windows.net\\test"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "localhost\\jenq"
+		},
+		"GoogleAdWords1_properties_typeProperties_clientId": {
+			"value": "asdf"
+		},
+		"GoogleAdWordsNewUser_properties_typeProperties_clientId": {
+			"value": "asdf"
+		},
+		"GoogleBigQuery1_properties_typeProperties_clientId": {
+			"value": "asdf"
+		},
+		"GoogleBigQuery2_properties_typeProperties_clientId": {
+			"value": "**********"
+		},
+		"Greenplum1_properties_typeProperties_host": {
+			"value": "a"
+		},
+		"Greenplum1_properties_typeProperties_database": {
+			"value": "a"
+		},
+		"Greenplum1_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"MariaDB1_properties_typeProperties_server": {
+			"value": "a"
+		},
+		"MariaDB1_properties_typeProperties_database": {
+			"value": "a"
+		},
+		"MariaDB1_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"Microsoft3651_properties_typeProperties_servicePrincipalId": {
+			"value": "d454fd1a-203b-4efc-89c8-35df6595cde0"
+		},
+		"Microsoft3652_properties_typeProperties_servicePrincipalId": {
+			"value": "asdf"
+		},
+		"Oracle2_properties_typeProperties_server": {
+			"value": "a"
+		},
+		"Oracle2_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"Oracle3_properties_typeProperties_server": {
+			"value": "a"
+		},
+		"Oracle3_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"Presto1_properties_typeProperties_host": {
+			"value": "a"
+		},
+		"Presto1_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"Presto1Anon_properties_typeProperties_host": {
+			"value": "a"
+		},
+		"Presto2_properties_typeProperties_host": {
+			"value": "a"
+		},
+		"PrestoV2_properties_typeProperties_host": {
+			"value": "a"
+		},
+		"PrestoV2_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"PrestoV2Anon_properties_typeProperties_host": {
+			"value": "a"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "asdf"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"value": "asdf"
+		},
+		"Salesforce1_properties_typeProperties_environmentUrl": {
+			"value": "https://login.salesforce.com"
+		},
+		"Salesforce1_properties_typeProperties_username": {
+			"value": "asdf"
+		},
+		"Salesforce2_properties_typeProperties_environmentUrl": {
+			"value": "https://testcs10.my.salesforce.com"
+		},
+		"Salesforce2_properties_typeProperties_clientId": {
+			"value": "3MVG9_7ddP9KqTzdbPfdZNpHkrPusBMa.w8XfSVUN1KTmwScawElWflCmDLH0m3z_T3Wxv.6VvaLJNkrLq8Os"
+		},
+		"Salesforce3_properties_typeProperties_environmentUrl": {
+			"value": "https://testcs10.my.salesforce.com"
+		},
+		"Salesforce3_properties_typeProperties_clientId": {
+			"value": "as"
+		},
+		"SalesforceAkv_properties_typeProperties_baseUrl": {
+			"value": "https://ADMS-UX-TEST.vault.azure.net/"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_environmentUrl": {
+			"value": "https://a.my.salesforce.com"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_clientId": {
+			"value": "a"
+		},
+		"SalesforceServiceCloud2_properties_typeProperties_environmentUrl": {
+			"value": "https://login.salesforce.com"
+		},
+		"SalesforceServiceCloud2_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"SalesforceV21_properties_typeProperties_environmentUrl": {
+			"value": "https://testcs10.my.salesforce.com"
+		},
+		"SalesforceV21_properties_typeProperties_clientId": {
+			"value": "3MVG9_7ddP9KqTzdbPfdZNpHkrPusBMa.w8XfSVUN1KTmwScawElWflCmDLH0m3z_T3Wxv.6VvaLJNkrLq8Os"
+		},
+		"SapEcc1_properties_typeProperties_url": {
+			"value": "a"
+		},
+		"SapEcc1_properties_typeProperties_username": {
+			"value": "a"
+		},
+		"ServiceNow2_properties_typeProperties_endpoint": {
+			"value": "a"
+		},
+		"ServiceNow2_properties_typeProperties_username": {
+			"value": "b"
+		},
+		"ServiceNow3_properties_typeProperties_endpoint": {
+			"value": "https://dev252079.service-now.com/"
+		},
+		"ServiceNow3_properties_typeProperties_username": {
+			"value": "@{linkedService().user}"
+		},
+		"ServiceNow4_properties_typeProperties_endpoint": {
+			"value": "https://dev252079.service-now.com/"
+		},
+		"ServiceNow4_properties_typeProperties_username": {
+			"value": "admin"
+		},
+		"ServiceNowGood_properties_typeProperties_endpoint": {
+			"value": "https://dev191039.service-now.com/"
+		},
+		"ServiceNowGood_properties_typeProperties_username": {
+			"value": "admin"
+		},
+		"SharePointOnlineFile1_properties_typeProperties_servicePrincipalId": {
+			"value": "a98ee153-e780-4d67-863a-ac7e5a131531"
+		},
+		"Snowflake2_properties_typeProperties_database": {
+			"value": "b"
+		},
+		"Snowflake3_properties_typeProperties_database": {
+			"value": "a"
+		},
+		"Snowflake4_properties_typeProperties_database": {
+			"value": "a"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "a"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "a"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "b"
+		},
+		"SqlServer2_properties_typeProperties_server": {
+			"value": "test"
+		},
+		"SqlServer2_properties_typeProperties_database": {
+			"value": "test"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"value": "test"
+		},
+		"Vertica1_properties_typeProperties_server": {
+			"value": "abc"
+		},
+		"Vertica1_properties_typeProperties_database": {
+			"value": "abc"
+		},
+		"adlsJenq_properties_typeProperties_url": {
+			"value": "https://admsuxtest.dfs.core.windows.net/"
+		},
+		"blobSas_sasUri": {
+			"value": ""
+		},
+		"linkedService1_properties_typeProperties_url": {
+			"value": "https://admsuxtest.dfs.core.windows.net/"
+		},
+		"AzureSynapseArtifacts1_properties_typeProperties_endpoint": {
+			"value": "https://3941workspace.dev.azuresynapse.net"
+		},
+		"AzureTrino7_properties_typeProperties_host": {
+			"value": "georgedev.6762a0931d00459f8ee9094c468fe3d5.westus2.tip.hdinsightaks.net"
+		},
+		"SalesforceApi_properties_typeProperties_environmentUrl": {
+			"value": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SalesforceAkv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADMS-SALESFORCE-ENVURL"
+			}
+		},
+		"SalesforceApi_properties_typeProperties_clientId": {
+			"value": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SalesforceAkv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADMS-SALESFORCE-CLIENTID"
+			}
+		},
+		"ServiceNow1_properties_typeProperties_endpoint": {
+			"value": "@{linkedService().endpoint}"
+		},
+		"ServiceNow1_properties_typeProperties_username": {
+			"value": "@{linkedService().name}"
+		},
+		"Vertica2_properties_typeProperties_server": {
+			"value": "a"
+		},
+		"Vertica2_properties_typeProperties_database": {
+			"value": "b"
+		},
+		"VerticaProd3_properties_typeProperties_connectionString_secretName": {
+			"value": "secret1"
+		},
+		"linkedService2_properties_typeProperties_userName": {
+			"value": "a"
+		},
+		"linkedService3_properties_typeProperties_userName": {
+			"value": "a"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

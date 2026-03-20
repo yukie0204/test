@@ -1,0 +1,1676 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "jen"
+		},
+		"AmazonRdsForOracle1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AmazonRdsForOracle1'"
+		},
+		"AmazonRdsForOracle2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AmazonRdsForOracle2'"
+		},
+		"AmazonRdsForSqlServer1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AmazonRdsForSqlServer1'"
+		},
+		"AmazonRedshift1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AmazonRedshift1'"
+		},
+		"AmazonS3Compatible1_secretAccessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'secretAccessKey' of 'AmazonS3Compatible1'"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataExplorer1_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'AzureDataExplorer1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage3_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'AzureDataLakeStorage3'"
+		},
+		"AzureDataLakeStorage5_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'AzureDataLakeStorage5'"
+		},
+		"AzureFileStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureFileStorage1'"
+		},
+		"AzureSearch1_key": {
+			"type": "secureString",
+			"metadata": "Secure string for 'key' of 'AzureSearch1'"
+		},
+		"AzureTrino1_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'AzureTrino1'"
+		},
+		"AzureTrino1_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'AzureTrino1'"
+		},
+		"AzureTrino2_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'AzureTrino2'"
+		},
+		"AzureTrino2_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'AzureTrino2'"
+		},
+		"AzureTrino3_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'AzureTrino3'"
+		},
+		"AzureTrino4_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'AzureTrino4'"
+		},
+		"AzureTrino4_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'AzureTrino4'"
+		},
+		"Cassandra1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Cassandra1'"
+		},
+		"CosmosDbNoSql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDbNoSql1'"
+		},
+		"CosmosDbNoSql2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDbNoSql2'"
+		},
+		"Dataverse1_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'Dataverse1'"
+		},
+		"Dynamics1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dynamics1'"
+		},
+		"Dynamics2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dynamics2'"
+		},
+		"Dynamics3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dynamics3'"
+		},
+		"DynamicsCrm1_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'DynamicsCrm1'"
+		},
+		"FileServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer1'"
+		},
+		"GoogleAdWords1_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWords1'"
+		},
+		"GoogleAdWords1_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleAdWords1'"
+		},
+		"GoogleAdWords1_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleAdWords1'"
+		},
+		"GoogleAdWords2_connectionProperties_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWords2'"
+		},
+		"GoogleAdWords2_connectionProperties_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleAdWords2'"
+		},
+		"GoogleAdWords2_connectionProperties_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleAdWords2'"
+		},
+		"GoogleAdWords3_connectionProperties_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWords3'"
+		},
+		"GoogleAdWordsLocal_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsLocal'"
+		},
+		"GoogleAdWordsLocal_privateKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'privateKey' of 'GoogleAdWordsLocal'"
+		},
+		"GoogleAdWordsNewService_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsNewService'"
+		},
+		"GoogleAdWordsNewService_privateKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'privateKey' of 'GoogleAdWordsNewService'"
+		},
+		"GoogleAdWordsNewUser_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsNewUser'"
+		},
+		"GoogleAdWordsNewUser_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleAdWordsNewUser'"
+		},
+		"GoogleAdWordsNewUser_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleAdWordsNewUser'"
+		},
+		"GoogleAdWordsOldService_connectionProperties_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsOldService'"
+		},
+		"GoogleAdWordsOldUser_connectionProperties_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsOldUser'"
+		},
+		"GoogleAdWordsOldUser_connectionProperties_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleAdWordsOldUser'"
+		},
+		"GoogleAdWordsOldUser_connectionProperties_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleAdWordsOldUser'"
+		},
+		"GoogleAdWordsProd_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsProd'"
+		},
+		"GoogleAdWordsProd_privateKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'privateKey' of 'GoogleAdWordsProd'"
+		},
+		"GoogleBigQuery1_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleBigQuery1'"
+		},
+		"GoogleBigQuery1_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleBigQuery1'"
+		},
+		"GoogleBigQuery2_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleBigQuery2'"
+		},
+		"GoogleBigQuery2_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleBigQuery2'"
+		},
+		"Greenplum1_pwd": {
+			"type": "secureString",
+			"metadata": "Secure string for 'pwd' of 'Greenplum1'"
+		},
+		"Greenplum2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Greenplum2'"
+		},
+		"MariaDB1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'MariaDB1'"
+		},
+		"Microsoft3651_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'Microsoft3651'"
+		},
+		"Microsoft3652_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'Microsoft3652'"
+		},
+		"Oracle2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Oracle2'"
+		},
+		"Oracle3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Oracle3'"
+		},
+		"PostgreSql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'PostgreSql1'"
+		},
+		"Presto1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Presto1'"
+		},
+		"Presto1Anon_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Presto1Anon'"
+		},
+		"Presto2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Presto2'"
+		},
+		"PrestoV2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'PrestoV2'"
+		},
+		"PrestoV2Anon_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'PrestoV2Anon'"
+		},
+		"RestService1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'RestService1'"
+		},
+		"Salesforce1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Salesforce1'"
+		},
+		"Salesforce1_securityToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'securityToken' of 'Salesforce1'"
+		},
+		"Salesforce2_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'Salesforce2'"
+		},
+		"Salesforce3_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'Salesforce3'"
+		},
+		"SalesforceMarketingCloud1_connectionProperties_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'SalesforceMarketingCloud1'"
+		},
+		"SalesforceServiceCloud1_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'SalesforceServiceCloud1'"
+		},
+		"SalesforceServiceCloud2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SalesforceServiceCloud2'"
+		},
+		"SalesforceServiceCloud2_securityToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'securityToken' of 'SalesforceServiceCloud2'"
+		},
+		"SalesforceV21_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'SalesforceV21'"
+		},
+		"SapEcc1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SapEcc1'"
+		},
+		"ServiceNow2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ServiceNow2'"
+		},
+		"ServiceNow3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ServiceNow3'"
+		},
+		"ServiceNow4_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ServiceNow4'"
+		},
+		"ServiceNowGood_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ServiceNowGood'"
+		},
+		"SharePointOnlineFile1_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'SharePointOnlineFile1'"
+		},
+		"Snowflake1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
+		},
+		"Snowflake2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Snowflake2'"
+		},
+		"Snowflake3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Snowflake3'"
+		},
+		"Snowflake4_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Snowflake4'"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"SqlServer2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer2'"
+		},
+		"Vertica1_pwd": {
+			"type": "secureString",
+			"metadata": "Secure string for 'pwd' of 'Vertica1'"
+		},
+		"VerticaProd1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'VerticaProd1'"
+		},
+		"adlsJenq_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adlsJenq'"
+		},
+		"jenq_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'jenq'"
+		},
+		"linkedService1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'linkedService1'"
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=admsuxtest-sql.database.windows.net;Initial Catalog=admsuxtest"
+		},
+		"Oracle1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Oracle1'",
+			"defaultValue": "host=admsoracle11.eastus.cloudapp.azure.com;port=1521;sid=XE;user id=BinaryTypes"
+		},
+		"VerticaProd2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'VerticaProd2'",
+			"defaultValue": "Server=server;Port=1234;Database=dbd;UID=user1;b=2;c=3"
+		},
+		"linkedService2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'linkedService2'"
+		},
+		"linkedService3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'linkedService3'"
+		},
+		"AmazonRedshift1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "ms-test.czkzkdm9fady.us-west-2.redshift.amazonaws.com"
+		},
+		"AmazonRedshift1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dev"
+		},
+		"AmazonRedshift1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "rsadmin"
+		},
+		"AmazonRedshift2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"AmazonRedshift2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"AmazonRedshift2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"AmazonS3Compatible1_properties_typeProperties_accessKeyId": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"AzureDataExplorer1_properties_typeProperties_endpoint": {
+			"type": "string",
+			"defaultValue": "https://admsuxtest.eastus.kusto.windows.net"
+		},
+		"AzureDataExplorer1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureDataExplorer1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "@linkedService().sp"
+		},
+		"AzureDataExplorer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "asd"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://admsuxtest.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adftest0224.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "82100b66-ace5-4bd1-a137-f11432b93451"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "d454fd1a-203b-4efc-89c8-35df6595cde0"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adfmgdctestsstorage.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "8a1d6ba1-7966-4617-adb0-58c2c4bb816b"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "38dfc0d9-fd8d-4f6d-8aad-f414dad88703"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ADMS-UX-TEST.vault.azure.net/"
+		},
+		"AzureSearch1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adfbot-asi3ad23cbz3m3g.search.windows.net"
+		},
+		"AzureTrino1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "@{linkedService().host}"
+		},
+		"AzureTrino1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "@{linkedService().ten}"
+		},
+		"AzureTrino1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "@{linkedService().id}"
+		},
+		"AzureTrino2_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "cluster.pool.region.hdinsightaks.net"
+		},
+		"AzureTrino2_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureTrino2_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"AzureTrino3_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "cluster.clusterpool.region.hdinsightaks.net"
+		},
+		"AzureTrino4_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "cluster.pool.us.hdinsightaks.net"
+		},
+		"AzureTrino4_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureTrino4_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"AzureTrino6_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "georgedev.6762a0931d00459f8ee9094c468fe3d5.westus2.tip.hdinsightaks.net"
+		},
+		"Cassandra1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Cassandra1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Dataverse1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "9bf5d9fd-5dcd-46a5-b99b-77d69adb2567"
+		},
+		"Dynamics1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "d"
+		},
+		"Dynamics2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "userName"
+		},
+		"Dynamics3_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "user"
+		},
+		"DynamicsCrm1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "\\\\jenq.file.core.windows.net\\test"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "localhost\\jenq"
+		},
+		"GoogleAdWords1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"GoogleAdWordsNewUser_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"GoogleBigQuery1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"GoogleBigQuery2_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "**********"
+		},
+		"Greenplum1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Greenplum1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Greenplum1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"MariaDB1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"MariaDB1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"MariaDB1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Microsoft3651_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "d454fd1a-203b-4efc-89c8-35df6595cde0"
+		},
+		"Microsoft3652_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"Oracle2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Oracle2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Oracle3_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Oracle3_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Presto1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Presto1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Presto1Anon_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Presto2_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"PrestoV2_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"PrestoV2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"PrestoV2Anon_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"Salesforce1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://login.salesforce.com"
+		},
+		"Salesforce1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"Salesforce2_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://testcs10.my.salesforce.com"
+		},
+		"Salesforce2_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "3MVG9_7ddP9KqTzdbPfdZNpHkrPusBMa.w8XfSVUN1KTmwScawElWflCmDLH0m3z_T3Wxv.6VvaLJNkrLq8Os"
+		},
+		"Salesforce3_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://testcs10.my.salesforce.com"
+		},
+		"Salesforce3_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "as"
+		},
+		"SalesforceAkv_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ADMS-UX-TEST.vault.azure.net/"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://a.my.salesforce.com"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"SalesforceServiceCloud2_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://login.salesforce.com"
+		},
+		"SalesforceServiceCloud2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"SalesforceV21_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://testcs10.my.salesforce.com"
+		},
+		"SalesforceV21_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "3MVG9_7ddP9KqTzdbPfdZNpHkrPusBMa.w8XfSVUN1KTmwScawElWflCmDLH0m3z_T3Wxv.6VvaLJNkrLq8Os"
+		},
+		"SapEcc1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"SapEcc1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"ServiceNow2_properties_typeProperties_endpoint": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"ServiceNow2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "b"
+		},
+		"ServiceNow3_properties_typeProperties_endpoint": {
+			"type": "string",
+			"defaultValue": "https://dev252079.service-now.com/"
+		},
+		"ServiceNow3_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "@{linkedService().user}"
+		},
+		"ServiceNow4_properties_typeProperties_endpoint": {
+			"type": "string",
+			"defaultValue": "https://dev252079.service-now.com/"
+		},
+		"ServiceNow4_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "admin"
+		},
+		"ServiceNowGood_properties_typeProperties_endpoint": {
+			"type": "string",
+			"defaultValue": "https://dev191039.service-now.com/"
+		},
+		"ServiceNowGood_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "admin"
+		},
+		"SharePointOnlineFile1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "a98ee153-e780-4d67-863a-ac7e5a131531"
+		},
+		"Snowflake2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "b"
+		},
+		"Snowflake3_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Snowflake4_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "b"
+		},
+		"SqlServer2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SqlServer2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"Vertica1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "abc"
+		},
+		"Vertica1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "abc"
+		},
+		"adlsJenq_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://admsuxtest.dfs.core.windows.net/"
+		},
+		"blobSas_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'blobSas'"
+		},
+		"linkedService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://admsuxtest.dfs.core.windows.net/"
+		},
+		"AzureSynapseArtifacts1_properties_typeProperties_endpoint": {
+			"type": "string",
+			"defaultValue": "https://3941workspace.dev.azuresynapse.net"
+		},
+		"AzureTrino7_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "georgedev.6762a0931d00459f8ee9094c468fe3d5.westus2.tip.hdinsightaks.net"
+		},
+		"SalesforceApi_properties_typeProperties_environmentUrl": {
+			"type": "object",
+			"defaultValue": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SalesforceAkv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADMS-SALESFORCE-ENVURL"
+			}
+		},
+		"SalesforceApi_properties_typeProperties_clientId": {
+			"type": "object",
+			"defaultValue": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SalesforceAkv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADMS-SALESFORCE-CLIENTID"
+			}
+		},
+		"ServiceNow1_properties_typeProperties_endpoint": {
+			"type": "string",
+			"defaultValue": "@{linkedService().endpoint}"
+		},
+		"ServiceNow1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "@{linkedService().name}"
+		},
+		"Vertica2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Vertica2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "b"
+		},
+		"VerticaProd3_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "secret1"
+		},
+		"linkedService2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"linkedService3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "jen_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AmazonRdsForOracle1_connectionString": {
+						"value": "[parameters('AmazonRdsForOracle1_connectionString')]"
+					},
+					"AmazonRdsForOracle2_connectionString": {
+						"value": "[parameters('AmazonRdsForOracle2_connectionString')]"
+					},
+					"AmazonRdsForSqlServer1_connectionString": {
+						"value": "[parameters('AmazonRdsForSqlServer1_connectionString')]"
+					},
+					"AmazonRedshift1_password": {
+						"value": "[parameters('AmazonRedshift1_password')]"
+					},
+					"AmazonS3Compatible1_secretAccessKey": {
+						"value": "[parameters('AmazonS3Compatible1_secretAccessKey')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureDataExplorer1_servicePrincipalKey": {
+						"value": "[parameters('AzureDataExplorer1_servicePrincipalKey')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage3_servicePrincipalCredential": {
+						"value": "[parameters('AzureDataLakeStorage3_servicePrincipalCredential')]"
+					},
+					"AzureDataLakeStorage5_servicePrincipalCredential": {
+						"value": "[parameters('AzureDataLakeStorage5_servicePrincipalCredential')]"
+					},
+					"AzureFileStorage1_connectionString": {
+						"value": "[parameters('AzureFileStorage1_connectionString')]"
+					},
+					"AzureSearch1_key": {
+						"value": "[parameters('AzureSearch1_key')]"
+					},
+					"AzureTrino1_servicePrincipalKey": {
+						"value": "[parameters('AzureTrino1_servicePrincipalKey')]"
+					},
+					"AzureTrino1_clientSecret": {
+						"value": "[parameters('AzureTrino1_clientSecret')]"
+					},
+					"AzureTrino2_servicePrincipalKey": {
+						"value": "[parameters('AzureTrino2_servicePrincipalKey')]"
+					},
+					"AzureTrino2_clientSecret": {
+						"value": "[parameters('AzureTrino2_clientSecret')]"
+					},
+					"AzureTrino3_servicePrincipalKey": {
+						"value": "[parameters('AzureTrino3_servicePrincipalKey')]"
+					},
+					"AzureTrino4_servicePrincipalKey": {
+						"value": "[parameters('AzureTrino4_servicePrincipalKey')]"
+					},
+					"AzureTrino4_clientSecret": {
+						"value": "[parameters('AzureTrino4_clientSecret')]"
+					},
+					"Cassandra1_password": {
+						"value": "[parameters('Cassandra1_password')]"
+					},
+					"AmazonRedshift1_properties_typeProperties_server": {
+						"value": "[parameters('AmazonRedshift1_properties_typeProperties_server')]"
+					},
+					"AmazonRedshift1_properties_typeProperties_database": {
+						"value": "[parameters('AmazonRedshift1_properties_typeProperties_database')]"
+					},
+					"AmazonRedshift1_properties_typeProperties_username": {
+						"value": "[parameters('AmazonRedshift1_properties_typeProperties_username')]"
+					},
+					"AmazonRedshift2_properties_typeProperties_server": {
+						"value": "[parameters('AmazonRedshift2_properties_typeProperties_server')]"
+					},
+					"AmazonRedshift2_properties_typeProperties_database": {
+						"value": "[parameters('AmazonRedshift2_properties_typeProperties_database')]"
+					},
+					"AmazonRedshift2_properties_typeProperties_username": {
+						"value": "[parameters('AmazonRedshift2_properties_typeProperties_username')]"
+					},
+					"AmazonS3Compatible1_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('AmazonS3Compatible1_properties_typeProperties_accessKeyId')]"
+					},
+					"AzureDataExplorer1_properties_typeProperties_endpoint": {
+						"value": "[parameters('AzureDataExplorer1_properties_typeProperties_endpoint')]"
+					},
+					"AzureDataExplorer1_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureDataExplorer1_properties_typeProperties_tenant')]"
+					},
+					"AzureDataExplorer1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureDataExplorer1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureDataExplorer1_properties_typeProperties_database": {
+						"value": "[parameters('AzureDataExplorer1_properties_typeProperties_database')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage3_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage3_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_tenant')]"
+					},
+					"AzureDataLakeStorage3_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureDataLakeStorage5_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage5_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage5_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureDataLakeStorage5_properties_typeProperties_tenant')]"
+					},
+					"AzureDataLakeStorage5_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureDataLakeStorage5_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"AzureSearch1_properties_typeProperties_url": {
+						"value": "[parameters('AzureSearch1_properties_typeProperties_url')]"
+					},
+					"AzureTrino1_properties_typeProperties_host": {
+						"value": "[parameters('AzureTrino1_properties_typeProperties_host')]"
+					},
+					"AzureTrino1_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureTrino1_properties_typeProperties_tenant')]"
+					},
+					"AzureTrino1_properties_typeProperties_clientId": {
+						"value": "[parameters('AzureTrino1_properties_typeProperties_clientId')]"
+					},
+					"AzureTrino2_properties_typeProperties_host": {
+						"value": "[parameters('AzureTrino2_properties_typeProperties_host')]"
+					},
+					"AzureTrino2_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureTrino2_properties_typeProperties_tenant')]"
+					},
+					"AzureTrino2_properties_typeProperties_clientId": {
+						"value": "[parameters('AzureTrino2_properties_typeProperties_clientId')]"
+					},
+					"AzureTrino3_properties_typeProperties_host": {
+						"value": "[parameters('AzureTrino3_properties_typeProperties_host')]"
+					},
+					"AzureTrino4_properties_typeProperties_host": {
+						"value": "[parameters('AzureTrino4_properties_typeProperties_host')]"
+					},
+					"AzureTrino4_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureTrino4_properties_typeProperties_tenant')]"
+					},
+					"AzureTrino4_properties_typeProperties_clientId": {
+						"value": "[parameters('AzureTrino4_properties_typeProperties_clientId')]"
+					},
+					"AzureTrino6_properties_typeProperties_host": {
+						"value": "[parameters('AzureTrino6_properties_typeProperties_host')]"
+					},
+					"Cassandra1_properties_typeProperties_host": {
+						"value": "[parameters('Cassandra1_properties_typeProperties_host')]"
+					},
+					"Cassandra1_properties_typeProperties_username": {
+						"value": "[parameters('Cassandra1_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "jen_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"CosmosDbNoSql1_connectionString": {
+						"value": "[parameters('CosmosDbNoSql1_connectionString')]"
+					},
+					"CosmosDbNoSql2_connectionString": {
+						"value": "[parameters('CosmosDbNoSql2_connectionString')]"
+					},
+					"Dataverse1_servicePrincipalCredential": {
+						"value": "[parameters('Dataverse1_servicePrincipalCredential')]"
+					},
+					"Dynamics1_password": {
+						"value": "[parameters('Dynamics1_password')]"
+					},
+					"Dynamics2_password": {
+						"value": "[parameters('Dynamics2_password')]"
+					},
+					"Dynamics3_password": {
+						"value": "[parameters('Dynamics3_password')]"
+					},
+					"DynamicsCrm1_servicePrincipalCredential": {
+						"value": "[parameters('DynamicsCrm1_servicePrincipalCredential')]"
+					},
+					"FileServer1_password": {
+						"value": "[parameters('FileServer1_password')]"
+					},
+					"GoogleAdWords1_developerToken": {
+						"value": "[parameters('GoogleAdWords1_developerToken')]"
+					},
+					"GoogleAdWords1_clientSecret": {
+						"value": "[parameters('GoogleAdWords1_clientSecret')]"
+					},
+					"GoogleAdWords1_refreshToken": {
+						"value": "[parameters('GoogleAdWords1_refreshToken')]"
+					},
+					"GoogleAdWords2_connectionProperties_developerToken": {
+						"value": "[parameters('GoogleAdWords2_connectionProperties_developerToken')]"
+					},
+					"GoogleAdWords2_connectionProperties_clientSecret": {
+						"value": "[parameters('GoogleAdWords2_connectionProperties_clientSecret')]"
+					},
+					"GoogleAdWords2_connectionProperties_refreshToken": {
+						"value": "[parameters('GoogleAdWords2_connectionProperties_refreshToken')]"
+					},
+					"GoogleAdWords3_connectionProperties_developerToken": {
+						"value": "[parameters('GoogleAdWords3_connectionProperties_developerToken')]"
+					},
+					"GoogleAdWordsLocal_developerToken": {
+						"value": "[parameters('GoogleAdWordsLocal_developerToken')]"
+					},
+					"GoogleAdWordsLocal_privateKey": {
+						"value": "[parameters('GoogleAdWordsLocal_privateKey')]"
+					},
+					"GoogleAdWordsNewService_developerToken": {
+						"value": "[parameters('GoogleAdWordsNewService_developerToken')]"
+					},
+					"GoogleAdWordsNewService_privateKey": {
+						"value": "[parameters('GoogleAdWordsNewService_privateKey')]"
+					},
+					"GoogleAdWordsNewUser_developerToken": {
+						"value": "[parameters('GoogleAdWordsNewUser_developerToken')]"
+					},
+					"GoogleAdWordsNewUser_clientSecret": {
+						"value": "[parameters('GoogleAdWordsNewUser_clientSecret')]"
+					},
+					"GoogleAdWordsNewUser_refreshToken": {
+						"value": "[parameters('GoogleAdWordsNewUser_refreshToken')]"
+					},
+					"GoogleAdWordsOldService_connectionProperties_developerToken": {
+						"value": "[parameters('GoogleAdWordsOldService_connectionProperties_developerToken')]"
+					},
+					"GoogleAdWordsOldUser_connectionProperties_developerToken": {
+						"value": "[parameters('GoogleAdWordsOldUser_connectionProperties_developerToken')]"
+					},
+					"GoogleAdWordsOldUser_connectionProperties_clientSecret": {
+						"value": "[parameters('GoogleAdWordsOldUser_connectionProperties_clientSecret')]"
+					},
+					"GoogleAdWordsOldUser_connectionProperties_refreshToken": {
+						"value": "[parameters('GoogleAdWordsOldUser_connectionProperties_refreshToken')]"
+					},
+					"GoogleAdWordsProd_developerToken": {
+						"value": "[parameters('GoogleAdWordsProd_developerToken')]"
+					},
+					"GoogleAdWordsProd_privateKey": {
+						"value": "[parameters('GoogleAdWordsProd_privateKey')]"
+					},
+					"GoogleBigQuery1_clientSecret": {
+						"value": "[parameters('GoogleBigQuery1_clientSecret')]"
+					},
+					"GoogleBigQuery1_refreshToken": {
+						"value": "[parameters('GoogleBigQuery1_refreshToken')]"
+					},
+					"GoogleBigQuery2_clientSecret": {
+						"value": "[parameters('GoogleBigQuery2_clientSecret')]"
+					},
+					"GoogleBigQuery2_refreshToken": {
+						"value": "[parameters('GoogleBigQuery2_refreshToken')]"
+					},
+					"Greenplum1_pwd": {
+						"value": "[parameters('Greenplum1_pwd')]"
+					},
+					"Dataverse1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('Dataverse1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"Dynamics1_properties_typeProperties_username": {
+						"value": "[parameters('Dynamics1_properties_typeProperties_username')]"
+					},
+					"Dynamics2_properties_typeProperties_username": {
+						"value": "[parameters('Dynamics2_properties_typeProperties_username')]"
+					},
+					"Dynamics3_properties_typeProperties_username": {
+						"value": "[parameters('Dynamics3_properties_typeProperties_username')]"
+					},
+					"DynamicsCrm1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('DynamicsCrm1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"FileServer1_properties_typeProperties_host": {
+						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
+					},
+					"FileServer1_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
+					},
+					"GoogleAdWords1_properties_typeProperties_clientId": {
+						"value": "[parameters('GoogleAdWords1_properties_typeProperties_clientId')]"
+					},
+					"GoogleAdWordsNewUser_properties_typeProperties_clientId": {
+						"value": "[parameters('GoogleAdWordsNewUser_properties_typeProperties_clientId')]"
+					},
+					"GoogleBigQuery1_properties_typeProperties_clientId": {
+						"value": "[parameters('GoogleBigQuery1_properties_typeProperties_clientId')]"
+					},
+					"GoogleBigQuery2_properties_typeProperties_clientId": {
+						"value": "[parameters('GoogleBigQuery2_properties_typeProperties_clientId')]"
+					},
+					"Greenplum1_properties_typeProperties_host": {
+						"value": "[parameters('Greenplum1_properties_typeProperties_host')]"
+					},
+					"Greenplum1_properties_typeProperties_database": {
+						"value": "[parameters('Greenplum1_properties_typeProperties_database')]"
+					},
+					"Greenplum1_properties_typeProperties_username": {
+						"value": "[parameters('Greenplum1_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'jen_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "jen_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Greenplum2_connectionString": {
+						"value": "[parameters('Greenplum2_connectionString')]"
+					},
+					"MariaDB1_password": {
+						"value": "[parameters('MariaDB1_password')]"
+					},
+					"Microsoft3651_servicePrincipalKey": {
+						"value": "[parameters('Microsoft3651_servicePrincipalKey')]"
+					},
+					"Microsoft3652_servicePrincipalKey": {
+						"value": "[parameters('Microsoft3652_servicePrincipalKey')]"
+					},
+					"Oracle2_password": {
+						"value": "[parameters('Oracle2_password')]"
+					},
+					"Oracle3_password": {
+						"value": "[parameters('Oracle3_password')]"
+					},
+					"PostgreSql1_connectionString": {
+						"value": "[parameters('PostgreSql1_connectionString')]"
+					},
+					"Presto1_password": {
+						"value": "[parameters('Presto1_password')]"
+					},
+					"Presto1Anon_password": {
+						"value": "[parameters('Presto1Anon_password')]"
+					},
+					"Presto2_password": {
+						"value": "[parameters('Presto2_password')]"
+					},
+					"PrestoV2_password": {
+						"value": "[parameters('PrestoV2_password')]"
+					},
+					"PrestoV2Anon_password": {
+						"value": "[parameters('PrestoV2Anon_password')]"
+					},
+					"RestService1_password": {
+						"value": "[parameters('RestService1_password')]"
+					},
+					"Salesforce1_password": {
+						"value": "[parameters('Salesforce1_password')]"
+					},
+					"Salesforce1_securityToken": {
+						"value": "[parameters('Salesforce1_securityToken')]"
+					},
+					"Salesforce2_clientSecret": {
+						"value": "[parameters('Salesforce2_clientSecret')]"
+					},
+					"Salesforce3_clientSecret": {
+						"value": "[parameters('Salesforce3_clientSecret')]"
+					},
+					"SalesforceMarketingCloud1_connectionProperties_clientSecret": {
+						"value": "[parameters('SalesforceMarketingCloud1_connectionProperties_clientSecret')]"
+					},
+					"SalesforceServiceCloud1_clientSecret": {
+						"value": "[parameters('SalesforceServiceCloud1_clientSecret')]"
+					},
+					"SalesforceServiceCloud2_password": {
+						"value": "[parameters('SalesforceServiceCloud2_password')]"
+					},
+					"SalesforceServiceCloud2_securityToken": {
+						"value": "[parameters('SalesforceServiceCloud2_securityToken')]"
+					},
+					"MariaDB1_properties_typeProperties_server": {
+						"value": "[parameters('MariaDB1_properties_typeProperties_server')]"
+					},
+					"MariaDB1_properties_typeProperties_database": {
+						"value": "[parameters('MariaDB1_properties_typeProperties_database')]"
+					},
+					"MariaDB1_properties_typeProperties_username": {
+						"value": "[parameters('MariaDB1_properties_typeProperties_username')]"
+					},
+					"Microsoft3651_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('Microsoft3651_properties_typeProperties_servicePrincipalId')]"
+					},
+					"Microsoft3652_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('Microsoft3652_properties_typeProperties_servicePrincipalId')]"
+					},
+					"Oracle2_properties_typeProperties_server": {
+						"value": "[parameters('Oracle2_properties_typeProperties_server')]"
+					},
+					"Oracle2_properties_typeProperties_username": {
+						"value": "[parameters('Oracle2_properties_typeProperties_username')]"
+					},
+					"Oracle3_properties_typeProperties_server": {
+						"value": "[parameters('Oracle3_properties_typeProperties_server')]"
+					},
+					"Oracle3_properties_typeProperties_username": {
+						"value": "[parameters('Oracle3_properties_typeProperties_username')]"
+					},
+					"Presto1_properties_typeProperties_host": {
+						"value": "[parameters('Presto1_properties_typeProperties_host')]"
+					},
+					"Presto1_properties_typeProperties_username": {
+						"value": "[parameters('Presto1_properties_typeProperties_username')]"
+					},
+					"Presto1Anon_properties_typeProperties_host": {
+						"value": "[parameters('Presto1Anon_properties_typeProperties_host')]"
+					},
+					"Presto2_properties_typeProperties_host": {
+						"value": "[parameters('Presto2_properties_typeProperties_host')]"
+					},
+					"PrestoV2_properties_typeProperties_host": {
+						"value": "[parameters('PrestoV2_properties_typeProperties_host')]"
+					},
+					"PrestoV2_properties_typeProperties_username": {
+						"value": "[parameters('PrestoV2_properties_typeProperties_username')]"
+					},
+					"PrestoV2Anon_properties_typeProperties_host": {
+						"value": "[parameters('PrestoV2Anon_properties_typeProperties_host')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
+					},
+					"RestService1_properties_typeProperties_userName": {
+						"value": "[parameters('RestService1_properties_typeProperties_userName')]"
+					},
+					"Salesforce1_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('Salesforce1_properties_typeProperties_environmentUrl')]"
+					},
+					"Salesforce1_properties_typeProperties_username": {
+						"value": "[parameters('Salesforce1_properties_typeProperties_username')]"
+					},
+					"Salesforce2_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('Salesforce2_properties_typeProperties_environmentUrl')]"
+					},
+					"Salesforce2_properties_typeProperties_clientId": {
+						"value": "[parameters('Salesforce2_properties_typeProperties_clientId')]"
+					},
+					"Salesforce3_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('Salesforce3_properties_typeProperties_environmentUrl')]"
+					},
+					"Salesforce3_properties_typeProperties_clientId": {
+						"value": "[parameters('Salesforce3_properties_typeProperties_clientId')]"
+					},
+					"SalesforceAkv_properties_typeProperties_baseUrl": {
+						"value": "[parameters('SalesforceAkv_properties_typeProperties_baseUrl')]"
+					},
+					"SalesforceServiceCloud1_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('SalesforceServiceCloud1_properties_typeProperties_environmentUrl')]"
+					},
+					"SalesforceServiceCloud1_properties_typeProperties_clientId": {
+						"value": "[parameters('SalesforceServiceCloud1_properties_typeProperties_clientId')]"
+					},
+					"SalesforceServiceCloud2_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('SalesforceServiceCloud2_properties_typeProperties_environmentUrl')]"
+					},
+					"SalesforceServiceCloud2_properties_typeProperties_username": {
+						"value": "[parameters('SalesforceServiceCloud2_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'jen_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "jen_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"SalesforceV21_clientSecret": {
+						"value": "[parameters('SalesforceV21_clientSecret')]"
+					},
+					"SapEcc1_password": {
+						"value": "[parameters('SapEcc1_password')]"
+					},
+					"ServiceNow2_password": {
+						"value": "[parameters('ServiceNow2_password')]"
+					},
+					"ServiceNow3_password": {
+						"value": "[parameters('ServiceNow3_password')]"
+					},
+					"ServiceNow4_password": {
+						"value": "[parameters('ServiceNow4_password')]"
+					},
+					"ServiceNowGood_password": {
+						"value": "[parameters('ServiceNowGood_password')]"
+					},
+					"SharePointOnlineFile1_servicePrincipalKey": {
+						"value": "[parameters('SharePointOnlineFile1_servicePrincipalKey')]"
+					},
+					"Snowflake1_connectionString": {
+						"value": "[parameters('Snowflake1_connectionString')]"
+					},
+					"Snowflake2_password": {
+						"value": "[parameters('Snowflake2_password')]"
+					},
+					"Snowflake3_password": {
+						"value": "[parameters('Snowflake3_password')]"
+					},
+					"Snowflake4_password": {
+						"value": "[parameters('Snowflake4_password')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"SqlServer2_password": {
+						"value": "[parameters('SqlServer2_password')]"
+					},
+					"Vertica1_pwd": {
+						"value": "[parameters('Vertica1_pwd')]"
+					},
+					"VerticaProd1_connectionString": {
+						"value": "[parameters('VerticaProd1_connectionString')]"
+					},
+					"adlsJenq_accountKey": {
+						"value": "[parameters('adlsJenq_accountKey')]"
+					},
+					"jenq_connectionString": {
+						"value": "[parameters('jenq_connectionString')]"
+					},
+					"linkedService1_accountKey": {
+						"value": "[parameters('linkedService1_accountKey')]"
+					},
+					"SalesforceV21_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('SalesforceV21_properties_typeProperties_environmentUrl')]"
+					},
+					"SalesforceV21_properties_typeProperties_clientId": {
+						"value": "[parameters('SalesforceV21_properties_typeProperties_clientId')]"
+					},
+					"SapEcc1_properties_typeProperties_url": {
+						"value": "[parameters('SapEcc1_properties_typeProperties_url')]"
+					},
+					"SapEcc1_properties_typeProperties_username": {
+						"value": "[parameters('SapEcc1_properties_typeProperties_username')]"
+					},
+					"ServiceNow2_properties_typeProperties_endpoint": {
+						"value": "[parameters('ServiceNow2_properties_typeProperties_endpoint')]"
+					},
+					"ServiceNow2_properties_typeProperties_username": {
+						"value": "[parameters('ServiceNow2_properties_typeProperties_username')]"
+					},
+					"ServiceNow3_properties_typeProperties_endpoint": {
+						"value": "[parameters('ServiceNow3_properties_typeProperties_endpoint')]"
+					},
+					"ServiceNow3_properties_typeProperties_username": {
+						"value": "[parameters('ServiceNow3_properties_typeProperties_username')]"
+					},
+					"ServiceNow4_properties_typeProperties_endpoint": {
+						"value": "[parameters('ServiceNow4_properties_typeProperties_endpoint')]"
+					},
+					"ServiceNow4_properties_typeProperties_username": {
+						"value": "[parameters('ServiceNow4_properties_typeProperties_username')]"
+					},
+					"ServiceNowGood_properties_typeProperties_endpoint": {
+						"value": "[parameters('ServiceNowGood_properties_typeProperties_endpoint')]"
+					},
+					"ServiceNowGood_properties_typeProperties_username": {
+						"value": "[parameters('ServiceNowGood_properties_typeProperties_username')]"
+					},
+					"SharePointOnlineFile1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('SharePointOnlineFile1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"Snowflake2_properties_typeProperties_database": {
+						"value": "[parameters('Snowflake2_properties_typeProperties_database')]"
+					},
+					"Snowflake3_properties_typeProperties_database": {
+						"value": "[parameters('Snowflake3_properties_typeProperties_database')]"
+					},
+					"Snowflake4_properties_typeProperties_database": {
+						"value": "[parameters('Snowflake4_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					},
+					"SqlServer2_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer2_properties_typeProperties_server')]"
+					},
+					"SqlServer2_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer2_properties_typeProperties_database')]"
+					},
+					"SqlServer2_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer2_properties_typeProperties_userName')]"
+					},
+					"Vertica1_properties_typeProperties_server": {
+						"value": "[parameters('Vertica1_properties_typeProperties_server')]"
+					},
+					"Vertica1_properties_typeProperties_database": {
+						"value": "[parameters('Vertica1_properties_typeProperties_database')]"
+					},
+					"adlsJenq_properties_typeProperties_url": {
+						"value": "[parameters('adlsJenq_properties_typeProperties_url')]"
+					},
+					"blobSas_sasUri": {
+						"value": "[parameters('blobSas_sasUri')]"
+					},
+					"linkedService1_properties_typeProperties_url": {
+						"value": "[parameters('linkedService1_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'jen_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "jen_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'jen_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "jen_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase2_connectionString": {
+						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
+					},
+					"Oracle1_connectionString": {
+						"value": "[parameters('Oracle1_connectionString')]"
+					},
+					"AzureSynapseArtifacts1_properties_typeProperties_endpoint": {
+						"value": "[parameters('AzureSynapseArtifacts1_properties_typeProperties_endpoint')]"
+					},
+					"AzureTrino7_properties_typeProperties_host": {
+						"value": "[parameters('AzureTrino7_properties_typeProperties_host')]"
+					},
+					"SalesforceApi_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('SalesforceApi_properties_typeProperties_environmentUrl')]"
+					},
+					"SalesforceApi_properties_typeProperties_clientId": {
+						"value": "[parameters('SalesforceApi_properties_typeProperties_clientId')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'jen_ArmTemplate_4')]"
+			]
+		},
+		{
+			"name": "jen_ArmTemplate_6",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"VerticaProd2_connectionString": {
+						"value": "[parameters('VerticaProd2_connectionString')]"
+					},
+					"linkedService2_password": {
+						"value": "[parameters('linkedService2_password')]"
+					},
+					"linkedService3_password": {
+						"value": "[parameters('linkedService3_password')]"
+					},
+					"ServiceNow1_properties_typeProperties_endpoint": {
+						"value": "[parameters('ServiceNow1_properties_typeProperties_endpoint')]"
+					},
+					"ServiceNow1_properties_typeProperties_username": {
+						"value": "[parameters('ServiceNow1_properties_typeProperties_username')]"
+					},
+					"Vertica2_properties_typeProperties_server": {
+						"value": "[parameters('Vertica2_properties_typeProperties_server')]"
+					},
+					"Vertica2_properties_typeProperties_database": {
+						"value": "[parameters('Vertica2_properties_typeProperties_database')]"
+					},
+					"VerticaProd3_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('VerticaProd3_properties_typeProperties_connectionString_secretName')]"
+					},
+					"linkedService2_properties_typeProperties_userName": {
+						"value": "[parameters('linkedService2_properties_typeProperties_userName')]"
+					},
+					"linkedService3_properties_typeProperties_userName": {
+						"value": "[parameters('linkedService3_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'jen_ArmTemplate_5')]"
+			]
+		},
+		{
+			"name": "jen_ArmTemplate_7",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_7.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'jen_ArmTemplate_6')]"
+			]
+		}
+	]
+}

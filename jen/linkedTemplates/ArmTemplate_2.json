@@ -1,0 +1,637 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "jen"
+		},
+		"Greenplum2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Greenplum2'"
+		},
+		"MariaDB1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'MariaDB1'"
+		},
+		"Microsoft3651_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'Microsoft3651'"
+		},
+		"Microsoft3652_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'Microsoft3652'"
+		},
+		"Oracle2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Oracle2'"
+		},
+		"Oracle3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Oracle3'"
+		},
+		"PostgreSql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'PostgreSql1'"
+		},
+		"Presto1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Presto1'"
+		},
+		"Presto1Anon_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Presto1Anon'"
+		},
+		"Presto2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Presto2'"
+		},
+		"PrestoV2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'PrestoV2'"
+		},
+		"PrestoV2Anon_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'PrestoV2Anon'"
+		},
+		"RestService1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'RestService1'"
+		},
+		"Salesforce1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Salesforce1'"
+		},
+		"Salesforce1_securityToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'securityToken' of 'Salesforce1'"
+		},
+		"Salesforce2_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'Salesforce2'"
+		},
+		"Salesforce3_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'Salesforce3'"
+		},
+		"SalesforceMarketingCloud1_connectionProperties_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'SalesforceMarketingCloud1'"
+		},
+		"SalesforceServiceCloud1_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'SalesforceServiceCloud1'"
+		},
+		"SalesforceServiceCloud2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SalesforceServiceCloud2'"
+		},
+		"SalesforceServiceCloud2_securityToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'securityToken' of 'SalesforceServiceCloud2'"
+		},
+		"MariaDB1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"MariaDB1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"MariaDB1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Microsoft3651_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "d454fd1a-203b-4efc-89c8-35df6595cde0"
+		},
+		"Microsoft3652_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"Oracle2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Oracle2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Oracle3_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Oracle3_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Presto1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Presto1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Presto1Anon_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Presto2_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"PrestoV2_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"PrestoV2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"PrestoV2Anon_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"Salesforce1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://login.salesforce.com"
+		},
+		"Salesforce1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"Salesforce2_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://testcs10.my.salesforce.com"
+		},
+		"Salesforce2_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "3MVG9_7ddP9KqTzdbPfdZNpHkrPusBMa.w8XfSVUN1KTmwScawElWflCmDLH0m3z_T3Wxv.6VvaLJNkrLq8Os"
+		},
+		"Salesforce3_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://testcs10.my.salesforce.com"
+		},
+		"Salesforce3_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "as"
+		},
+		"SalesforceAkv_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ADMS-UX-TEST.vault.azure.net/"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://a.my.salesforce.com"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"SalesforceServiceCloud2_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://login.salesforce.com"
+		},
+		"SalesforceServiceCloud2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Greenplum2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Greenplum",
+				"typeProperties": {
+					"connectionString": "[parameters('Greenplum2_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MariaDB1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "MariaDB",
+				"typeProperties": {
+					"server": "[parameters('MariaDB1_properties_typeProperties_server')]",
+					"port": 3306,
+					"database": "[parameters('MariaDB1_properties_typeProperties_database')]",
+					"username": "[parameters('MariaDB1_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('MariaDB1_password')]"
+					},
+					"driverVersion": "v2",
+					"sslMode": 4,
+					"useSystemTrustStore": 0
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Microsoft3651')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Office365",
+				"typeProperties": {
+					"office365TenantId": "82100b66-ace5-4bd1-a137-f11432b93451",
+					"servicePrincipalTenantId": "82100b66-ace5-4bd1-a137-f11432b93451",
+					"servicePrincipalId": "[parameters('Microsoft3651_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalKey": {
+						"type": "SecureString",
+						"value": "[parameters('Microsoft3651_servicePrincipalKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Microsoft3652')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Office365",
+				"typeProperties": {
+					"office365TenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+					"servicePrincipalTenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+					"servicePrincipalId": "[parameters('Microsoft3652_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalKey": {
+						"type": "SecureString",
+						"value": "[parameters('Microsoft3652_servicePrincipalKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Oracle2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Oracle",
+				"version": "2.0",
+				"typeProperties": {
+					"server": "[parameters('Oracle2_properties_typeProperties_server')]",
+					"authenticationType": "Basic",
+					"username": "[parameters('Oracle2_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Oracle2_password')]"
+					},
+					"encryptionClient": "accepted",
+					"encryptionTypesClient": "(AES128, AES192, AES256, 3DES112, 3DES168)",
+					"cryptoChecksumClient": "accepted",
+					"cryptoChecksumTypesClient": "(SHA1, SHA256, SHA384, SHA512)"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Oracle3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Oracle",
+				"version": "2.0",
+				"typeProperties": {
+					"server": "[parameters('Oracle3_properties_typeProperties_server')]",
+					"authenticationType": "Basic",
+					"username": "[parameters('Oracle3_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Oracle3_password')]"
+					},
+					"encryptionClient": "accepted",
+					"encryptionTypesClient": "(AES128, AES192, AES256, 3DES112, 3DES168)",
+					"cryptoChecksumClient": "accepted",
+					"cryptoChecksumTypesClient": "(SHA1, SHA256, SHA384, SHA512)"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PostgreSql1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "PostgreSql",
+				"typeProperties": {
+					"connectionString": "[parameters('PostgreSql1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Presto1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Presto",
+				"typeProperties": {
+					"host": "[parameters('Presto1_properties_typeProperties_host')]",
+					"serverVersion": "a",
+					"catalog": "a",
+					"port": 443,
+					"authenticationType": "LDAP",
+					"username": "[parameters('Presto1_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Presto1_password')]"
+					},
+					"enableSsl": true,
+					"useSystemTrustStore": false,
+					"allowHostNameCNMismatch": false,
+					"allowSelfSignedServerCert": false,
+					"timeZoneID": ""
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Presto1Anon')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Presto",
+				"typeProperties": {
+					"host": "[parameters('Presto1Anon_properties_typeProperties_host')]",
+					"serverVersion": "a",
+					"catalog": "a",
+					"port": 443,
+					"authenticationType": "Anonymous",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Presto1Anon_password')]"
+					},
+					"enableSsl": false,
+					"timeZoneID": ""
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Presto2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Presto",
+				"typeProperties": {
+					"host": "[parameters('Presto2_properties_typeProperties_host')]",
+					"serverVersion": "a",
+					"catalog": "a",
+					"authenticationType": "Anonymous",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Presto2_password')]"
+					},
+					"enableSsl": false,
+					"timeZoneID": ""
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PrestoV2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Presto",
+				"version": "2.0",
+				"typeProperties": {
+					"host": "[parameters('PrestoV2_properties_typeProperties_host')]",
+					"catalog": "a",
+					"port": 443,
+					"authenticationType": "LDAP",
+					"username": "[parameters('PrestoV2_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('PrestoV2_password')]"
+					},
+					"enableSsl": true,
+					"enableServerCertificateValidation": true,
+					"timeZoneID": ""
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PrestoV2Anon')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Presto",
+				"version": "2.0",
+				"typeProperties": {
+					"host": "[parameters('PrestoV2Anon_properties_typeProperties_host')]",
+					"catalog": "a",
+					"port": 443,
+					"authenticationType": "Anonymous",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('PrestoV2Anon_password')]"
+					},
+					"enableSsl": true,
+					"enableServerCertificateValidation": true,
+					"timeZoneID": ""
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService1_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('RestService1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('RestService1_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Salesforce1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Salesforce",
+				"typeProperties": {
+					"environmentUrl": "[parameters('Salesforce1_properties_typeProperties_environmentUrl')]",
+					"username": "[parameters('Salesforce1_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Salesforce1_password')]"
+					},
+					"securityToken": {
+						"type": "SecureString",
+						"value": "[parameters('Salesforce1_securityToken')]"
+					},
+					"apiVersion": "45.5",
+					"authenticationType": "Basic"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Salesforce2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SalesforceV2",
+				"typeProperties": {
+					"environmentUrl": "[parameters('Salesforce2_properties_typeProperties_environmentUrl')]",
+					"clientId": "[parameters('Salesforce2_properties_typeProperties_clientId')]",
+					"clientSecret": {
+						"type": "SecureString",
+						"value": "[parameters('Salesforce2_clientSecret')]"
+					},
+					"apiVersion": "54.0",
+					"authenticationType": "OAuth2ClientCredential"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Salesforce3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SalesforceV2",
+				"typeProperties": {
+					"environmentUrl": "[parameters('Salesforce3_properties_typeProperties_environmentUrl')]",
+					"clientId": "[parameters('Salesforce3_properties_typeProperties_clientId')]",
+					"clientSecret": {
+						"type": "SecureString",
+						"value": "[parameters('Salesforce3_clientSecret')]"
+					},
+					"apiVersion": "54.0",
+					"authenticationType": "OAuth2ClientCredential"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SalesforceAkv')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('SalesforceAkv_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SalesforceMarketingCloud1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SalesforceMarketingCloud",
+				"typeProperties": {
+					"connectionProperties": {
+						"host": "www.exacttargetapis.com",
+						"authenticationType": "OAuth_2.0",
+						"clientId": "a",
+						"clientSecret": {
+							"type": "SecureString",
+							"value": "[parameters('SalesforceMarketingCloud1_connectionProperties_clientSecret')]"
+						},
+						"useEncryptedEndpoints": true,
+						"useHostVerification": true,
+						"usePeerVerification": true
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SalesforceServiceCloud1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SalesforceServiceCloudV2",
+				"typeProperties": {
+					"environmentUrl": "[parameters('SalesforceServiceCloud1_properties_typeProperties_environmentUrl')]",
+					"clientId": "[parameters('SalesforceServiceCloud1_properties_typeProperties_clientId')]",
+					"clientSecret": {
+						"type": "SecureString",
+						"value": "[parameters('SalesforceServiceCloud1_clientSecret')]"
+					},
+					"apiVersion": "54.0",
+					"authenticationType": "OAuth2ClientCredential",
+					"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEIxRTM0M0EzLTMzRjktNDQ3NS1COTQzLTBCRTY0MDEwODYzMl9jZmI2OTNkMy02MjYwLTQ0YjktYTVjYS03N2E2M2QyMDM5ZjkiDQp9"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SalesforceServiceCloud2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SalesforceServiceCloud",
+				"typeProperties": {
+					"environmentUrl": "[parameters('SalesforceServiceCloud2_properties_typeProperties_environmentUrl')]",
+					"username": "[parameters('SalesforceServiceCloud2_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('SalesforceServiceCloud2_password')]"
+					},
+					"securityToken": {
+						"type": "SecureString",
+						"value": "[parameters('SalesforceServiceCloud2_securityToken')]"
+					},
+					"apiVersion": "54.0"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

@@ -1,0 +1,696 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "jen"
+		},
+		"CosmosDbNoSql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDbNoSql1'"
+		},
+		"CosmosDbNoSql2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDbNoSql2'"
+		},
+		"Dataverse1_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'Dataverse1'"
+		},
+		"Dynamics1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dynamics1'"
+		},
+		"Dynamics2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dynamics2'"
+		},
+		"Dynamics3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dynamics3'"
+		},
+		"DynamicsCrm1_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'DynamicsCrm1'"
+		},
+		"FileServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer1'"
+		},
+		"GoogleAdWords1_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWords1'"
+		},
+		"GoogleAdWords1_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleAdWords1'"
+		},
+		"GoogleAdWords1_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleAdWords1'"
+		},
+		"GoogleAdWords2_connectionProperties_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWords2'"
+		},
+		"GoogleAdWords2_connectionProperties_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleAdWords2'"
+		},
+		"GoogleAdWords2_connectionProperties_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleAdWords2'"
+		},
+		"GoogleAdWords3_connectionProperties_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWords3'"
+		},
+		"GoogleAdWordsLocal_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsLocal'"
+		},
+		"GoogleAdWordsLocal_privateKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'privateKey' of 'GoogleAdWordsLocal'"
+		},
+		"GoogleAdWordsNewService_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsNewService'"
+		},
+		"GoogleAdWordsNewService_privateKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'privateKey' of 'GoogleAdWordsNewService'"
+		},
+		"GoogleAdWordsNewUser_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsNewUser'"
+		},
+		"GoogleAdWordsNewUser_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleAdWordsNewUser'"
+		},
+		"GoogleAdWordsNewUser_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleAdWordsNewUser'"
+		},
+		"GoogleAdWordsOldService_connectionProperties_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsOldService'"
+		},
+		"GoogleAdWordsOldUser_connectionProperties_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsOldUser'"
+		},
+		"GoogleAdWordsOldUser_connectionProperties_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleAdWordsOldUser'"
+		},
+		"GoogleAdWordsOldUser_connectionProperties_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleAdWordsOldUser'"
+		},
+		"GoogleAdWordsProd_developerToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'developerToken' of 'GoogleAdWordsProd'"
+		},
+		"GoogleAdWordsProd_privateKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'privateKey' of 'GoogleAdWordsProd'"
+		},
+		"GoogleBigQuery1_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleBigQuery1'"
+		},
+		"GoogleBigQuery1_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleBigQuery1'"
+		},
+		"GoogleBigQuery2_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'GoogleBigQuery2'"
+		},
+		"GoogleBigQuery2_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'GoogleBigQuery2'"
+		},
+		"Greenplum1_pwd": {
+			"type": "secureString",
+			"metadata": "Secure string for 'pwd' of 'Greenplum1'"
+		},
+		"Dataverse1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "9bf5d9fd-5dcd-46a5-b99b-77d69adb2567"
+		},
+		"Dynamics1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "d"
+		},
+		"Dynamics2_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "userName"
+		},
+		"Dynamics3_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "user"
+		},
+		"DynamicsCrm1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "\\\\jenq.file.core.windows.net\\test"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "localhost\\jenq"
+		},
+		"GoogleAdWords1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"GoogleAdWordsNewUser_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"GoogleBigQuery1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "asdf"
+		},
+		"GoogleBigQuery2_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "**********"
+		},
+		"Greenplum1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Greenplum1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "a"
+		},
+		"Greenplum1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "a"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/CosmosDbNoSql1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "CosmosDb",
+				"typeProperties": {
+					"connectionString": "[parameters('CosmosDbNoSql1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CosmosDbNoSql2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "CosmosDb",
+				"typeProperties": {
+					"connectionString": "[parameters('CosmosDbNoSql2_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Dataverse1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "CommonDataServiceForApps",
+				"typeProperties": {
+					"deploymentType": "Online",
+					"serviceUri": "https://admsdynamics.crm.dynamics.com",
+					"authenticationType": "AADServicePrincipal",
+					"servicePrincipalId": "[parameters('Dataverse1_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalCredential": {
+						"type": "SecureString",
+						"value": "[parameters('Dataverse1_servicePrincipalCredential')]"
+					},
+					"servicePrincipalCredentialType": "ServicePrincipalKey"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Dynamics1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Dynamics",
+				"typeProperties": {
+					"deploymentType": "OnPremisesWithIfd",
+					"organizationName": "a",
+					"hostName": "b",
+					"port": 443,
+					"authenticationType": "Ifd",
+					"username": "[parameters('Dynamics1_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Dynamics1_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Dynamics2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Dynamics",
+				"typeProperties": {
+					"deploymentType": "OnPremisesWithIfd",
+					"organizationName": "orgname",
+					"hostName": "hostName",
+					"port": 443,
+					"authenticationType": "ActiveDirectory",
+					"username": "[parameters('Dynamics2_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Dynamics2_password')]"
+					},
+					"domain": "asdf"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Dynamics3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"parameters": {
+					"name": {
+						"type": "String"
+					},
+					"port": {
+						"type": "Int"
+					},
+					"domain": {
+						"type": "String"
+					}
+				},
+				"annotations": [],
+				"type": "Dynamics",
+				"typeProperties": {
+					"deploymentType": "OnPremisesWithIfd",
+					"organizationName": "@{linkedService().name}",
+					"hostName": "host",
+					"port": "@linkedService().port",
+					"authenticationType": "Ifd",
+					"username": "[parameters('Dynamics3_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Dynamics3_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DynamicsCrm1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "DynamicsCrm",
+				"typeProperties": {
+					"deploymentType": "Online",
+					"serviceUri": "a",
+					"authenticationType": "AADServicePrincipal",
+					"servicePrincipalId": "[parameters('DynamicsCrm1_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalCredential": {
+						"type": "SecureString",
+						"value": "[parameters('DynamicsCrm1_servicePrincipalCredential')]"
+					},
+					"servicePrincipalCredentialType": "ServicePrincipalKey"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/FileServer1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "FileServer",
+				"typeProperties": {
+					"host": "[parameters('FileServer1_properties_typeProperties_host')]",
+					"userId": "[parameters('FileServer1_properties_typeProperties_userId')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('FileServer1_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleAdWords1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"parameters": {
+					"asdf": {
+						"type": "string"
+					}
+				},
+				"annotations": [
+					"asdf"
+				],
+				"type": "GoogleAdWords",
+				"typeProperties": {
+					"clientCustomerID": "asdf",
+					"developerToken": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWords1_developerToken')]"
+					},
+					"authenticationType": "UserAuthentication",
+					"clientId": "[parameters('GoogleAdWords1_properties_typeProperties_clientId')]",
+					"clientSecret": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWords1_clientSecret')]"
+					},
+					"refreshToken": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWords1_refreshToken')]"
+					},
+					"supportLegacyDataTypes": true
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleAdWords2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleAdWords",
+				"typeProperties": {
+					"connectionProperties": {
+						"clientCustomerID": "asdf",
+						"loginCustomerID": "asdf",
+						"developerToken": {
+							"type": "SecureString",
+							"value": "[parameters('GoogleAdWords2_connectionProperties_developerToken')]"
+						},
+						"authenticationType": "UserAuthentication",
+						"clientId": "asdf",
+						"clientSecret": {
+							"type": "SecureString",
+							"value": "[parameters('GoogleAdWords2_connectionProperties_clientSecret')]"
+						},
+						"refreshToken": {
+							"type": "SecureString",
+							"value": "[parameters('GoogleAdWords2_connectionProperties_refreshToken')]"
+						},
+						"supportLegacyDataTypes": true
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleAdWords3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleAdWords",
+				"typeProperties": {
+					"connectionProperties": {
+						"clientCustomerID": "asdf",
+						"loginCustomerID": "asdf",
+						"developerToken": {
+							"type": "SecureString",
+							"value": "[parameters('GoogleAdWords3_connectionProperties_developerToken')]"
+						},
+						"authenticationType": "ServiceAuthentication",
+						"email": "asdf",
+						"keyFilePath": "asdf",
+						"trustedCertPath": "asdf",
+						"supportLegacyDataTypes": true
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleAdWordsLocal')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleAdWords",
+				"typeProperties": {
+					"clientCustomerID": "asdf",
+					"loginCustomerID": "asdf",
+					"developerToken": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWordsLocal_developerToken')]"
+					},
+					"authenticationType": "ServiceAuthentication",
+					"email": "asdf",
+					"privateKey": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWordsLocal_privateKey')]"
+					},
+					"supportLegacyDataTypes": false,
+					"googleAdsApiVersion": "v14"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleAdWordsNewService')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleAdWords",
+				"typeProperties": {
+					"clientCustomerID": "asdf",
+					"loginCustomerID": "asdf",
+					"developerToken": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWordsNewService_developerToken')]"
+					},
+					"authenticationType": "ServiceAuthentication",
+					"email": "asdf",
+					"privateKey": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWordsNewService_privateKey')]"
+					},
+					"supportLegacyDataTypes": false,
+					"googleAdsApiVersion": "v14"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleAdWordsNewUser')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleAdWords",
+				"typeProperties": {
+					"clientCustomerID": "asdf",
+					"loginCustomerID": "asdf",
+					"developerToken": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWordsNewUser_developerToken')]"
+					},
+					"authenticationType": "UserAuthentication",
+					"clientId": "[parameters('GoogleAdWordsNewUser_properties_typeProperties_clientId')]",
+					"clientSecret": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWordsNewUser_clientSecret')]"
+					},
+					"refreshToken": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWordsNewUser_refreshToken')]"
+					},
+					"supportLegacyDataTypes": false,
+					"googleAdsApiVersion": "v14"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleAdWordsOldService')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleAdWords",
+				"typeProperties": {
+					"connectionProperties": {
+						"clientCustomerID": "asdf",
+						"loginCustomerID": "asdf",
+						"developerToken": {
+							"type": "SecureString",
+							"value": "[parameters('GoogleAdWordsOldService_connectionProperties_developerToken')]"
+						},
+						"authenticationType": "ServiceAuthentication",
+						"email": "asdf",
+						"keyFilePath": "asdf",
+						"trustedCertPath": "asdf",
+						"useSystemTrustStore": false,
+						"supportLegacyDataTypes": false
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleAdWordsOldUser')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleAdWords",
+				"typeProperties": {
+					"connectionProperties": {
+						"clientCustomerID": "asdf",
+						"loginCustomerID": "asdf",
+						"developerToken": {
+							"type": "SecureString",
+							"value": "[parameters('GoogleAdWordsOldUser_connectionProperties_developerToken')]"
+						},
+						"authenticationType": "UserAuthentication",
+						"clientId": "asdf",
+						"clientSecret": {
+							"type": "SecureString",
+							"value": "[parameters('GoogleAdWordsOldUser_connectionProperties_clientSecret')]"
+						},
+						"refreshToken": {
+							"type": "SecureString",
+							"value": "[parameters('GoogleAdWordsOldUser_connectionProperties_refreshToken')]"
+						},
+						"supportLegacyDataTypes": false
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleAdWordsProd')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleAdWords",
+				"typeProperties": {
+					"clientCustomerID": "asdf",
+					"loginCustomerID": "asdf",
+					"developerToken": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWordsProd_developerToken')]"
+					},
+					"authenticationType": "ServiceAuthentication",
+					"email": "asdf",
+					"privateKey": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleAdWordsProd_privateKey')]"
+					},
+					"supportLegacyDataTypes": false,
+					"googleAdsApiVersion": "v14"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleBigQuery1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleBigQuery",
+				"typeProperties": {
+					"project": "asdf",
+					"additionalProjects": "asdf",
+					"requestGoogleDriveScope": false,
+					"authenticationType": "UserAuthentication",
+					"clientId": "[parameters('GoogleBigQuery1_properties_typeProperties_clientId')]",
+					"clientSecret": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleBigQuery1_clientSecret')]"
+					},
+					"refreshToken": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleBigQuery1_refreshToken')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/GoogleBigQuery2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "GoogleBigQuery",
+				"typeProperties": {
+					"project": "asdf",
+					"requestGoogleDriveScope": false,
+					"authenticationType": "UserAuthentication",
+					"clientId": "[parameters('GoogleBigQuery2_properties_typeProperties_clientId')]",
+					"clientSecret": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleBigQuery2_clientSecret')]"
+					},
+					"refreshToken": {
+						"type": "SecureString",
+						"value": "[parameters('GoogleBigQuery2_refreshToken')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Greenplum1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Greenplum",
+				"version": "2.0",
+				"typeProperties": {
+					"authenticationType": "Basic",
+					"host": "[parameters('Greenplum1_properties_typeProperties_host')]",
+					"port": 5432,
+					"database": "[parameters('Greenplum1_properties_typeProperties_database')]",
+					"username": "[parameters('Greenplum1_properties_typeProperties_username')]",
+					"sslMode": 3,
+					"pwd": {
+						"type": "SecureString",
+						"value": "[parameters('Greenplum1_pwd')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
