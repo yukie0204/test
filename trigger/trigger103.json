@@ -1,0 +1,31 @@
+{
+    "name": "trigger103",
+    "properties": {
+        "annotations": [],
+        "runtimeState": "Stopped",
+        "pipelines": [
+            {
+                "pipelineReference": {
+                    "referenceName": "pipeline6",
+                    "type": "PipelineReference"
+                }
+            },
+            {
+                "pipelineReference": {
+                    "referenceName": "Pipelinespark",
+                    "type": "PipelineReference"
+                }
+            }
+        ],
+        "type": "ScheduleTrigger",
+        "typeProperties": {
+            "recurrence": {
+                "frequency": "Day",
+                "interval": 1,
+                "startTime": "2021-02-17T06:01:58Z",
+                "endTime": "9999-12-31T23:59:59Z",
+                "timeZone": "UTC"
+            }
+        }
+    }
+}
